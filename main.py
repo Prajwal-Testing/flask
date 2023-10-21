@@ -4,9 +4,15 @@ import os
 app = Flask(__name__)
 
 
+
+
 @app.route('/')
 def index():
     return jsonify({"Choo Choo": "Welcome to your Flask app 🚅"})
+
+@app.route('/inr/<int:a>')
+def inr(a):
+    return jsonify(f{"A++, \n {a}"})
 
 @app.route("/xpshort/<path:url>")
 def xpshort(url):
